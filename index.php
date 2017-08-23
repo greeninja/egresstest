@@ -7,7 +7,7 @@
     CURLOPT_USERAGENT => 'curl'
   ));
   $result = curl_exec($curl);
-  print("This is my Egress IP");
+  print("This is my Egress IP<br>");
   print($result);
 
   curl_close($curl);
