@@ -1,6 +1,6 @@
 <?php
 
-  $url = .$_ENV["URL"] ?? 'http://ifconfig.io';
+  $url = getenv('URL') or $url = 'http://ifconfig.io';
 
   $curl = curl_init();
   curl_setopt_array($curl, array(
@@ -11,7 +11,7 @@
   $result = curl_exec($curl);
   print("This is my Egress IP<br>");
   print($result);
-
+  print "<br>Using $url";
   curl_close($curl);
 
 ?>
